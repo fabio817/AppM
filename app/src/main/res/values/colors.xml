@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/yellowEnable</color>
+    <color name="colorPrimaryDark">@color/yellowDisable</color>
+    <color name="colorAccent">#FF000000</color>
+
+    <color name="purpleEnable">#8442FA</color>
+    <color name="purpleDisable">#CCB0FF</color>
+    <color name="yellowEnable">#FFEC47</color>
+    <color name="yellowDisable">#FFFAD0</color>
+    <color name="orangeEnable">#FFC107</color>
+    <color name="orangeDisable">#B6AE95</color>
+    <color name="redEnable">#FD493C</color>
+    <color name="redDisable">#DEA8A4</color>
+    <color name="blueEnable">#2B4AF8</color>
+    <color name="blueDisable">#8F9FFA</color>
+
+    <color name="gray">#B3B3B3</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFF</color>
+
+
+
+</resources>
