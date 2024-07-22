@@ -15,9 +15,27 @@
     <string name="fragmento_vermelho">Fragmento Vermelho</string>
     <string name="titulo_vermelho">Vermelho</string>
     <string name="fragmento_azul">Fragmento Azul</string>
+    <string name="fragmento_cliente">Add Cliente</string>
     <string name="titulo_azul">Azul</string>
 
     <!-- Opções do Menu Principal -->
     <string name="meu_perfil">Meu Perfil</string>
+
+    <!-- text do formulario cliente -->
+    <string name="TelaCliente">Adcionar Clientes</string>
+    <string name="nome">Nome Completo</string>
+    <string name="email">E-mail</string>
+    <string name="cpf">CPF</string>
+    <string name="idade">Idade</string>
+    <string name="telefone">Telefone</string>
+    <string name="sexo">Sexo</string>
+    <string name="cep">CEP</string>
+    <string name="bairro">Bairro</string>
+    <string name="logradouro">Logradouro</string>
+    <string name="cidade">Cidade</string>
+    <string name="estado">Estado</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="salvar">Salvar</string>
+    <string name="termo_de_uso">Termos de Uso</string>
 </resources>
 

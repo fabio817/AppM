@@ -1,7 +1,5 @@
 package com.app.appminhaideia.model;
 
-import com.app.appminhaideia.controller.ICrud;
-
 public class Cliente {
 
     private int id;

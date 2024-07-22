@@ -1,8 +1,6 @@
 package com.app.appminhaideia.view;
 
-import android.content.ContentValues;
 import android.content.res.ColorStateList;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,9 +18,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.app.appminhaideia.R;
 import com.app.appminhaideia.controller.ClienteController;
-import com.app.appminhaideia.datamodel.ClienteDataModel;
 import com.app.appminhaideia.model.Cliente;
-import com.app.appminhaideia.utils.AppUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -187,6 +183,23 @@ public class MainActivity extends AppCompatActivity
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloAzulFragment()).commit();
+
+        } else if (id == R.id.nav_add_cliente) {
+
+            menu = navigationView.getMenu();
+
+            nav_preto = menu.findItem(R.id.nav_preto);
+            nav_preto.setTitle("Preto");
+
+            nav_vermelho = menu.findItem(R.id.nav_vermelho);
+            nav_vermelho.setTitle("Vermelho");
+
+            nav_azul = menu.findItem(R.id.nav_add_cliente);
+            nav_azul.setTitle("Azul Ativado");
+
+            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloClienteFragment()).commit();
 
         }
 
