@@ -1,6 +1,8 @@
 package com.app.appminhaideia.view;
 
+import android.content.ContentValues;
 import android.content.res.ColorStateList;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,12 +18,20 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 
 import com.app.appminhaideia.R;
+import com.app.appminhaideia.controller.ClienteController;
+import com.app.appminhaideia.datamodel.ClienteDataModel;
+import com.app.appminhaideia.model.Cliente;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    Cliente obj;
+    Cliente obj2;
+
+    SQLiteDatabase db;
 
     // Gerenciamento dos fragmentos
     FragmentManager fragmentManager;
@@ -76,6 +86,22 @@ public class MainActivity extends AppCompatActivity
 
         // content_fragment usado para receber os layouts dos fragmentos
         fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
+
+        ClienteController clienteController = new ClienteController(getBaseContext());
+
+
+        obj = new Cliente();
+        obj.setId(1);
+        obj.setNome("fabio");
+        obj.setEmail("fabioo@dddd");
+
+        obj2 = new Cliente();
+        obj2.setNome("fabioOliveira");
+        obj2.setEmail("fabioodeedfa@dddd");
+
+
+        clienteController.incluir(obj);
+        clienteController.incluir(obj2);
 
 
     }
