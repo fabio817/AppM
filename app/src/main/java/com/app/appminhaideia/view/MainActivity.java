@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Cliente obj;
-    Cliente obj2;
 
 
     // Gerenciamento dos fragmentos
@@ -90,26 +89,11 @@ public class MainActivity extends AppCompatActivity
 
         ClienteController clienteController = new ClienteController(getBaseContext());
 
+        for (Cliente obj: clienteController.listar()) {
 
-        obj = new Cliente();
-        obj.setId(5);
-        obj.setNome("Carlos");
-        obj.setEmail("Ccarlos@gamil.com");
-        obj.setBairro("praça antonio");
-        obj.setCpf("055.626.558.00");
-        obj.setCep(63540-000);
-        obj.setIdade("35");
-        obj.setSexo(true);
-        obj.setCidade("Várzea Alegre");
-        obj.setEstado("CE");
+            Log.i("listar", "Clientes: "+obj.getId()+ "-" +obj.getNome()+ "-" +obj.getCep());
 
-
-        if(clienteController.alterar(obj)){
-            Log.i(AppUtils.TAG, "onCreate: "+obj +"alterado com sussesso.....");
-        } else{
-            Log.i(AppUtils.TAG, "onCreate: "+obj +"Erro Não alterado .....");
         }
-
 
     }
 

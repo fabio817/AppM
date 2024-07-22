@@ -2,12 +2,17 @@ package com.app.appminhaideia.dataresource;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.app.appminhaideia.datamodel.ClienteDataModel;
+import com.app.appminhaideia.model.Cliente;
 import com.app.appminhaideia.utils.AppUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class AppDataBase extends SQLiteOpenHelper {
@@ -64,6 +69,25 @@ public class AppDataBase extends SQLiteOpenHelper {
         return retorno;
     }
 
+    public boolean upDate(String tabela, ContentValues dados){
+
+        db = getWritableDatabase();
+
+        boolean retorno = false;
+
+        try {
+
+            retorno = db.update(tabela, dados, "id =?",new String[]{String.valueOf(dados.get("id"))}) > 0;
+
+        } catch (Exception e){
+
+            Log.e(AppUtils.TAG, "inserir: Erro ao inserir os dados....."+e.getMessage() );
+
+        };
+
+        return retorno;
+    }
+
 
     /**
      * metodo pra deletar dados no banco de dados
@@ -88,23 +112,38 @@ public class AppDataBase extends SQLiteOpenHelper {
         return retorno;
     }
 
-    public boolean upDate(String tabela, ContentValues dados){
+    public List<Cliente> getAllClientes (String tabela) {
+
+        Cliente obj;
 
         db = getWritableDatabase();
 
-        boolean retorno = false;
+        List<Cliente> clientes = new ArrayList<>();
 
-        try {
+        String sql = "select * from " +tabela;
 
-            retorno = db.update(tabela, dados, "id =?",new String[]{String.valueOf(dados.get("id"))}) > 0;
+        Cursor cursor;
+        cursor = db.rawQuery(sql, null);
 
-        } catch (Exception e){
+        if (cursor.moveToFirst()){
 
-            Log.e(AppUtils.TAG, "inserir: Erro ao inserir os dados....."+e.getMessage() );
+            do {
 
-        };
+            obj = new Cliente();
+            obj.setId(cursor.getInt(cursor.getColumnIndexOrThrow(ClienteDataModel.ID)));
+            obj.setNome(cursor.getString(cursor.getColumnIndexOrThrow(ClienteDataModel.NOME)));
+            obj.setCep(cursor.getInt(cursor.getColumnIndexOrThrow(ClienteDataModel.CEP)));
+            // obj.setSexo(cursor.getWantsAllOnMoveCalls(ClienteDataModel.SEXO.replace(0,1,)));
 
-        return retorno;
+
+            clientes.add(obj);
+
+            }while (cursor.moveToNext());
+
+        }
+
+        return clientes;
+
     }
 
 
