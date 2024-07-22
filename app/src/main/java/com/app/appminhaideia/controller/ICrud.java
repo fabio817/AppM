@@ -8,7 +8,7 @@ public interface ICrud<T> {
 
     public Boolean alterar(T obj);
 
-    public Boolean deletar(T obj);
+    public Boolean deletar(int id);
 
     public List<T> listar();
 

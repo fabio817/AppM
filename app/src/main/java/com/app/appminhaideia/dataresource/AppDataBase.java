@@ -63,4 +63,51 @@ public class AppDataBase extends SQLiteOpenHelper {
 
         return retorno;
     }
+
+
+    /**
+     * metodo pra deletar dados no banco de dados
+     * */
+
+    public boolean deleteByID(String tabela, int id){
+
+        db = getWritableDatabase();
+
+        boolean retorno = false;
+
+        try {
+
+            retorno = db.delete(tabela, "id = ?", new String[]{String.valueOf(id)}) > 0;
+
+        } catch (Exception e){
+
+            Log.e(AppUtils.TAG, "inserir: Erro ao deletar os dados....."+e.getMessage() );
+
+        };
+
+        return retorno;
+    }
+
+    public boolean upDate(String tabela, ContentValues dados){
+
+        db = getWritableDatabase();
+
+        boolean retorno = false;
+
+        try {
+
+            retorno = db.update(tabela, dados, "id =?",new String[]{String.valueOf(dados.get("id"))}) > 0;
+
+        } catch (Exception e){
+
+            Log.e(AppUtils.TAG, "inserir: Erro ao inserir os dados....."+e.getMessage() );
+
+        };
+
+        return retorno;
+    }
+
+
 }
+
+

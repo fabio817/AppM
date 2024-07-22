@@ -5,6 +5,7 @@ import android.content.res.ColorStateList;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +22,7 @@ import com.app.appminhaideia.R;
 import com.app.appminhaideia.controller.ClienteController;
 import com.app.appminhaideia.datamodel.ClienteDataModel;
 import com.app.appminhaideia.model.Cliente;
+import com.app.appminhaideia.utils.AppUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -31,7 +33,6 @@ public class MainActivity extends AppCompatActivity
     Cliente obj;
     Cliente obj2;
 
-    SQLiteDatabase db;
 
     // Gerenciamento dos fragmentos
     FragmentManager fragmentManager;
@@ -91,17 +92,23 @@ public class MainActivity extends AppCompatActivity
 
 
         obj = new Cliente();
-        obj.setId(1);
-        obj.setNome("fabio");
-        obj.setEmail("fabioo@dddd");
+        obj.setId(5);
+        obj.setNome("Carlos");
+        obj.setEmail("Ccarlos@gamil.com");
+        obj.setBairro("praça antonio");
+        obj.setCpf("055.626.558.00");
+        obj.setCep(63540-000);
+        obj.setIdade("35");
+        obj.setSexo(true);
+        obj.setCidade("Várzea Alegre");
+        obj.setEstado("CE");
 
-        obj2 = new Cliente();
-        obj2.setNome("fabioOliveira");
-        obj2.setEmail("fabioodeedfa@dddd");
 
-
-        clienteController.incluir(obj);
-        clienteController.incluir(obj2);
+        if(clienteController.alterar(obj)){
+            Log.i(AppUtils.TAG, "onCreate: "+obj +"alterado com sussesso.....");
+        } else{
+            Log.i(AppUtils.TAG, "onCreate: "+obj +"Erro Não alterado .....");
+        }
 
 
     }

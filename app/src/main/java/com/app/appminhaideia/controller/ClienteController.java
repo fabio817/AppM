@@ -79,15 +79,13 @@ public class ClienteController extends AppDataBase implements ICrud<Cliente>{
         // mais nesse caso aqui é pra (Cliente)
 
         // vem la da AppDataBase
-        return false;
+        return upDate(ClienteDataModel.TABELA,dadoDoObjeto);
     }
 
     @Override
-    public Boolean deletar(Cliente obj) {
+    public Boolean deletar(int id) {
 
-        dadoDoObjeto.put(ClienteDataModel.ID, obj.getId());
-
-        return null;
+        return deleteByID(ClienteDataModel.TABELA,id);
     }
 
     @Override
