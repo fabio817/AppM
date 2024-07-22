@@ -40,6 +40,7 @@ public class ClienteController extends AppDataBase implements ICrud<Cliente>{
         dadoDoObjeto.put(ClienteDataModel.CIDADE, obj.getCidade());
         dadoDoObjeto.put(ClienteDataModel.ESTADO, obj.getEstado());
         dadoDoObjeto.put(ClienteDataModel.SEXO, obj.isSexo());
+        dadoDoObjeto.put(ClienteDataModel.TERMOS_DE_USO, obj.isSexo());
 
 
         // enviar os dados (dadoDoObjeto) para a classe AppDataBase
@@ -71,6 +72,7 @@ public class ClienteController extends AppDataBase implements ICrud<Cliente>{
         dadoDoObjeto.put(ClienteDataModel.CIDADE, obj.getCidade());
         dadoDoObjeto.put(ClienteDataModel.ESTADO, obj.getEstado());
         dadoDoObjeto.put(ClienteDataModel.SEXO, obj.isSexo());
+        dadoDoObjeto.put(ClienteDataModel.TERMOS_DE_USO, obj.isSexo());
 
 
         // enviar os dados (dadoDoObjeto) para a classe AppDataBase

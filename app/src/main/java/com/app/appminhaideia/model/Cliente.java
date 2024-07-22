@@ -14,6 +14,7 @@ public class Cliente {
     private String logradouro;
     private String cidade;
     private String estado;
+    private boolean termoDeUso;
 
 
     public int getId() {
@@ -111,6 +112,15 @@ public class Cliente {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public boolean isTermoDeUso() {
+        return termoDeUso;
+    }
+
+    public void setTermoDeUso(boolean termoDeUso) {
+        this.termoDeUso = termoDeUso;
+    }
+
 
 
 

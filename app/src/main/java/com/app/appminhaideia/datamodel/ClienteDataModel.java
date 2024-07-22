@@ -18,6 +18,7 @@ public class ClienteDataModel {
     public static final String LOGRADOURO = "logradouro";
     public static final String CIDADE = "cidade";
     public static final String ESTADO = "estado";
+    public static final String TERMOS_DE_USO = "termos_de_uso";
 
     // QUERY para criar a tabela no banco de dados
     public static String queryCriarTabela = "";
@@ -39,7 +40,8 @@ public class ClienteDataModel {
         queryCriarTabela += BAIRRO+" text, ";
         queryCriarTabela += LOGRADOURO+" text, ";
         queryCriarTabela += CIDADE+" text, ";
-        queryCriarTabela += ESTADO+" text ";
+        queryCriarTabela += ESTADO+" text, ";
+        queryCriarTabela += TERMOS_DE_USO+" integer ";
         queryCriarTabela += ")";
 
 

@@ -199,7 +199,7 @@ public class MainActivity extends AppCompatActivity
 
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloClienteFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new AdicionarClienteFragment()).commit();
 
         }
 

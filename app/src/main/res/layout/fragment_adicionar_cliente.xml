@@ -1,0 +1,131 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.AdicionarClienteFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:hint="@string/titulo"
+                android:textColor="@color/black"
+                android:textSize="27sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editNome"
+                style="@style/editForm"
+                android:inputType="textPersonName"
+                android:hint="@string/nome"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editEmail"
+                style="@style/editForm"
+                android:inputType="textEmailAddress"
+                android:hint="@string/email"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editCpf"
+                style="@style/editForm"
+                android:inputType="number"
+                android:hint="@string/cpf"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editIdade"
+                style="@style/editForm"
+                android:inputType="date|numberSigned"
+                android:hint="@string/idade"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTelefone"
+                style="@style/editForm"
+                android:inputType="phone"
+                android:hint="@string/telefone"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editCep"
+                style="@style/editForm"
+                android:inputType="number"
+                android:hint="@string/cep"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editBairro"
+                style="@style/editForm"
+                android:inputType="textPersonName"
+                android:hint="@string/bairro"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editLogradouro"
+                style="@style/editForm"
+                android:inputType="textPersonName"
+                android:hint="@string/logradouro"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editCidade"
+                style="@style/editForm"
+                android:inputType="textPersonName"
+                android:hint="@string/cidade"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editEstado"
+                style="@style/editForm"
+                android:inputType="textPersonName"
+                android:hint="@string/estado"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/ckbTermoDeUso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="6dp"
+                android:text="@string/termo_de_uso" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="50dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCancelar"
+                    style="@style/butomForm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancelar" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSalvar"
+                    style="@style/butomForm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/salvar" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+</FrameLayout>
