@@ -3,6 +3,9 @@ package com.app.appminhaideia.view;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +40,6 @@ public class ListarClientesFragment extends Fragment {
 
     List<Cliente> clienteList;
 
-    List<String> clientes;
 
     ArrayAdapter<String> clienteAdapter;
     ArrayList<HashMap<String, String>> fitroClientes;
@@ -79,7 +81,8 @@ public class ListarClientesFragment extends Fragment {
 
         clienteList = clienteController.listar();
 
-        clientes = new ArrayList<>();
+        clienteController.gerarListaClientesView();
+    /*    clientes = new ArrayList<>();
 
         // não se pode implementar a regra na camada da view
         // TODO: 23/07/2024 implementar regra de negocio na controladora da class Cliente
@@ -89,9 +92,33 @@ public class ListarClientesFragment extends Fragment {
             clientes.add(obj.getId()+", "+obj.getNome());
 
         }
-
-        clienteAdapter = new ArrayAdapter<>(getContext(), R.layout.listar_cliente_item, R.id.txtItemLista, clientes);
+*/
+        clienteAdapter = new ArrayAdapter<>(getContext(), R.layout.listar_cliente_item, R.id.txtItemLista, clienteController.gerarListaClientesView());
         listaPesquisa.setAdapter(clienteAdapter);
+
+        editPesquisa.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence filtro, int i, int i1, int i2) {
+/*
+                ListarClientesFragment.this.clienteAdapter.getFilter().filter(filtro);
+
+                Log.i("add_list_view", "beforeTextChanged: "+filtro);*/
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence filtro, int i, int i1, int i2) {
+
+                ListarClientesFragment.this.clienteAdapter.getFilter().filter(filtro);
+
+                Log.i("add_list_view", "beforeTextChanged: "+filtro);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         return view;
     }

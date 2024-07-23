@@ -12,4 +12,5 @@ public interface ICrud<T> {
 
     public List<T> listar();
 
+
 }
