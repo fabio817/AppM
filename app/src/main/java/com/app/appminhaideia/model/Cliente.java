@@ -8,7 +8,6 @@ public class Cliente {
     private String cpf;
     private String idade;
     private String telefone;
-    private boolean sexo;
     private int cep;
     private String bairro;
     private String logradouro;
@@ -63,14 +62,6 @@ public class Cliente {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
-    }
-
-    public boolean isSexo() {
-        return sexo;
-    }
-
-    public void setSexo(boolean sexo) {
-        this.sexo = sexo;
     }
 
     public int getCep() {

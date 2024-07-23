@@ -96,9 +96,10 @@ public class AdicionarClienteFragment extends Fragment {
         btnCancelar = view.findViewById(R.id.btnCancelar);
         btnSalvar= view.findViewById(R.id.btnSalvar);
 
-        novoCliente = new Cliente();
 
         clienteController = new ClienteController(getContext());
+
+        novoCliente = new Cliente();
 
     }
 
@@ -128,28 +129,27 @@ public class AdicionarClienteFragment extends Fragment {
                     editEmail.setError("Digitar o E-mail:");
                     editEmail.requestFocus();
                 }
-                if(TextUtils.isEmpty(editTelefone.getText())){
+                else if(TextUtils.isEmpty(editTelefone.getText())){
                     isDadosOk = false;
                     editTelefone.setError("Digitar o Telefone:");
                     editTelefone.requestFocus();
                 }
 
-                if(TextUtils.isEmpty(editCpf.getText())){
+                else if(TextUtils.isEmpty(editCpf.getText())){
                     isDadosOk = false;
                     editCpf.setError("Digitar o CPF:");
                     editCpf.requestFocus();
                 }
 
-                if(TextUtils.isEmpty(editCidade.getText())){
+                else if(TextUtils.isEmpty(editCidade.getText())){
                     isDadosOk = false;
                     editCidade.setError("Digitar a Cidade:");
                     editCidade.requestFocus();
                 }
 
-                if(isDadosOk){
+               else if(isDadosOk){
 
                        clienteController.incluir(novoCliente);
-                    Log.i("log_add_cliente", "onClick: tudo certo ao incluir os dados....");
 
                 }else{
                     Toast.makeText(getContext(),"Digite os Campos Obrigatorios....",Toast.LENGTH_SHORT).show();

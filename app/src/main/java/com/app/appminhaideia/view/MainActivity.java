@@ -85,12 +85,6 @@ public class MainActivity extends AppCompatActivity
 
         ClienteController clienteController = new ClienteController(getBaseContext());
 
-        for (Cliente obj: clienteController.listar()) {
-
-            Log.i("listar", "Clientes: "+obj.getId()+ "-" +obj.getNome()+ "-" +obj.getCep());
-
-        }
-
     }
 
     @Override

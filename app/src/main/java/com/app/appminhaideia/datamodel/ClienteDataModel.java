@@ -11,7 +11,6 @@ public class ClienteDataModel {
     public static final String EMAIL = "email";
     public static final String CPF = "cpf";
     public static final String IDADE = "idade";
-    public static final String SEXO = "sexo";
     public static final String TELEFONE = "telefone";
     public static final String CEP = "cep";
     public static final String BAIRRO = "bairro";
@@ -35,7 +34,6 @@ public class ClienteDataModel {
         queryCriarTabela += CEP+" text, ";
         queryCriarTabela += CPF+" text, ";
         queryCriarTabela += IDADE+" text, ";
-        queryCriarTabela += SEXO+" integer, ";
         queryCriarTabela += TELEFONE+" text, ";
         queryCriarTabela += BAIRRO+" text, ";
         queryCriarTabela += LOGRADOURO+" text, ";
