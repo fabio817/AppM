@@ -149,6 +149,23 @@ public class AdicionarClienteFragment extends Fragment {
 
                else if(isDadosOk){
 
+                   // tem que popular os dados no objeto cliente
+
+                   novoCliente.setNome(editNome.getText().toString());
+                   novoCliente.setEmail(editEmail.getText().toString());
+                   novoCliente.setCpf(editCpf.getText().toString());
+                   novoCliente.setIdade(editIdade.getText().toString());
+                   novoCliente.setBairro(editBairro.getText().toString());
+                   novoCliente.setTelefone(editTelefone.getText().toString());
+
+                   // foi feito o cast por que cep é um tipo int
+                   novoCliente.setCep(Integer.parseInt(editCep.getText().toString()));
+                   novoCliente.setLogradouro(editLogradouro.getText().toString());
+                   novoCliente.setCidade(editCidade.getText().toString());
+                   novoCliente.setEstado(editEstado.getText().toString());
+
+                   novoCliente.setTermoDeUso(ckbTermoDeUso.isChecked());
+
                        clienteController.incluir(novoCliente);
 
                 }else{

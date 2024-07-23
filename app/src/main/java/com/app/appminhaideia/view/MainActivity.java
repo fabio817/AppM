@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity
         fragmentManager = getSupportFragmentManager();
 
         // content_fragment usado para receber os layouts dos fragmentos
-        fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloVermelhoFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.content_fragment, new ListarClientesFragment()).commit();
 
         ClienteController clienteController = new ClienteController(getBaseContext());
 
@@ -182,18 +182,17 @@ public class MainActivity extends AppCompatActivity
 
             menu = navigationView.getMenu();
 
-            nav_preto = menu.findItem(R.id.nav_preto);
-            nav_preto.setTitle("Preto");
-
-            nav_vermelho = menu.findItem(R.id.nav_vermelho);
-            nav_vermelho.setTitle("Vermelho");
-
-            nav_azul = menu.findItem(R.id.nav_add_cliente);
-            nav_azul.setTitle("Azul Ativado");
-
             navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new AdicionarClienteFragment()).commit();
+
+        }else if (id == R.id.nav_listar_clientes) {
+
+            menu = navigationView.getMenu();
+
+            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ListarClientesFragment()).commit();
 
         }
 

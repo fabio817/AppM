@@ -102,6 +102,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="6dp"
+                android:checked="true"
                 android:text="@string/termo_de_uso" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
