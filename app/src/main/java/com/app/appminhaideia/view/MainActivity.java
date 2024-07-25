@@ -26,9 +26,6 @@ import com.google.android.material.snackbar.Snackbar;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    Cliente obj;
-
-
     // Gerenciamento dos fragmentos
     FragmentManager fragmentManager;
 
